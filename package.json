@@ -1,6 +1,7 @@
 {
 	"name": "@juriadams/timed-fetch",
-	"version": "0.0.1",
+	"description": "A tiny fetch wrapper that tracks request duration, latency, and server timings.",
+	"version": "0.0.2",
 	"type": "module",
 	"private": false,
 	"files": [
