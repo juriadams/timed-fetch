@@ -3,18 +3,27 @@
 	"version": "0.0.1",
 	"type": "module",
 	"private": false,
-	"files": ["dist", "package.json", "readme.md", "changelog.md"],
+	"files": [
+		"dist",
+		"package.json",
+		"readme.md",
+		"changelog.md"
+	],
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.mts",
 	"scripts": {
 		"build": "obuild",
 		"typecheck": "tsc --noEmit",
 		"test": "bun test",
-		"exports": "attw --pack . --profile esm-only"
+		"exports": "attw --pack . --profile esm-only",
+		"lint": "biome lint . && biome check .",
+		"format": "biome lint --write . && biome format --write . && biome check --write ."
 	},
 	"devDependencies": {
 		"@arethetypeswrong/cli": "0.18.2",
+		"@biomejs/biome": "2.2.3",
 		"@types/bun": "latest",
+		"fetch-mock": "12.5.4",
 		"obuild": "0.2.1"
 	},
 	"peerDependencies": {

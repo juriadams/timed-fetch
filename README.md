@@ -1,6 +1,6 @@
 # `@juriadams/timed-fetch`
 
-A minimal `fetch` wrapper that measures request duration and exposes basic timing metrics such as total duration, network latency, and server-side timings (if available via the `Server-Timing` header).
+A minimal wrapper around fetch that measures request duration and provides timing metrics such as total duration, network latency, and parsed server-side timings from the Server-Timing header when available.
 
 ## Installation
 

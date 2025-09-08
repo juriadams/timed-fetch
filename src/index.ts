@@ -54,5 +54,5 @@ export const timedFetch = async (...args: Parameters<typeof fetch>) => {
 
 	(res as TimedResponse).timing = timing;
 
-	return res;
+	return res as TimedResponse;
 };
