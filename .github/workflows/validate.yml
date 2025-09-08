@@ -1,7 +1,7 @@
 name: Validate
 
 env:
-  BUN_VERSION: 1.2.18
+  BUN_VERSION: 1.2.20
 
 on:
   push:
