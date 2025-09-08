@@ -18,11 +18,15 @@
 		"test": "bun test",
 		"exports": "attw --pack . --profile esm-only",
 		"lint": "biome lint . && biome check .",
-		"format": "biome lint --write . && biome format --write . && biome check --write ."
+		"format": "biome lint --write . && biome format --write . && biome check --write .",
+		"changeset": "changeset add",
+		"version": "changeset version",
+		"publish": "changeset publish"
 	},
 	"devDependencies": {
 		"@arethetypeswrong/cli": "0.18.2",
 		"@biomejs/biome": "2.2.3",
+		"@changesets/cli": "2.29.6",
 		"@types/bun": "latest",
 		"fetch-mock": "12.5.4",
 		"obuild": "0.2.1"
