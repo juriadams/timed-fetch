@@ -21,7 +21,7 @@
 		"format": "biome lint --write . && biome format --write . && biome check --write .",
 		"changeset": "changeset add",
 		"version": "changeset version",
-		"publish": "bun run build && bun publish"
+		"publish": "bun run build && npm publish"
 	},
 	"devDependencies": {
 		"@arethetypeswrong/cli": "0.18.2",
