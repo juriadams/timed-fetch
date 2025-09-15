@@ -25,8 +25,8 @@
 	},
 	"devDependencies": {
 		"@arethetypeswrong/cli": "0.18.2",
-		"@biomejs/biome": "2.2.3",
-		"@changesets/cli": "2.29.6",
+		"@biomejs/biome": "2.2.4",
+		"@changesets/cli": "2.29.7",
 		"@types/bun": "latest",
 		"fetch-mock": "12.5.4",
 		"obuild": "0.2.1"
