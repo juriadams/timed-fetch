@@ -28,8 +28,64 @@ export interface Timing {
 
 /**
  * Response wrapper that adds additional timing information.
+ * Extends the native Response class to include timing data in console output.
  */
-export type TimedResponse = Response & { timing: Timing };
+export class TimedResponse extends Response {
+	public timing: Timing;
+
+	constructor(
+		body?: ReadableStream | null,
+		init?: ResponseInit,
+		timing?: Timing | undefined | null,
+	) {
+		super(body, init);
+		this.timing = timing || {
+			total: 0,
+			network: null,
+			server: null,
+		};
+	}
+
+	/**
+	 * Custom inspect method for better console.log output.
+	 * This is used by Node.js and Bun when logging the object.
+	 */
+	[Symbol.for("nodejs.util.inspect.custom")]() {
+		return {
+			timing: this.timing,
+			status: this.status,
+			statusText: this.statusText,
+			headers: Object.fromEntries(this.headers.entries()),
+			ok: this.ok,
+			redirected: this.redirected,
+			type: this.type,
+			url: this.url,
+		};
+	}
+
+	/**
+	 * Custom toJSON method for JSON.stringify and structured logging.
+	 */
+	toJSON() {
+		return {
+			timing: this.timing,
+			status: this.status,
+			statusText: this.statusText,
+			headers: Object.fromEntries(this.headers.entries()),
+			ok: this.ok,
+			redirected: this.redirected,
+			type: this.type,
+			url: this.url,
+		};
+	}
+
+	/**
+	 * Override the Symbol.toStringTag for better type identification.
+	 */
+	get [Symbol.toStringTag]() {
+		return "TimedResponse";
+	}
+}
 
 /**
  * Minimal `fetch` wrapper that exposes a set of basic timing information
@@ -52,7 +108,16 @@ export const timedFetch = async (...args: Parameters<typeof fetch>) => {
 		server: null,
 	};
 
-	(res as TimedResponse).timing = timing;
+	// Create a new TimedResponse from the original response.
+	const timedResponse = new TimedResponse(
+		res.body,
+		{
+			status: res.status,
+			statusText: res.statusText,
+			headers: res.headers,
+		},
+		timing,
+	);
 
-	return res as TimedResponse;
+	return timedResponse;
 };
