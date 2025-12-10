@@ -36,7 +36,7 @@ export class TimedResponse extends Response {
 	constructor(
 		body?: ReadableStream | null,
 		init?: ResponseInit,
-		timing?: Timing,
+		timing?: Timing | undefined | null,
 	) {
 		super(body, init);
 		this.timing = timing || {
@@ -108,7 +108,7 @@ export const timedFetch = async (...args: Parameters<typeof fetch>) => {
 		server: null,
 	};
 
-	// Create a new TimedResponse from the original response
+	// Create a new TimedResponse from the original response.
 	const timedResponse = new TimedResponse(
 		res.body,
 		{
