@@ -29,7 +29,7 @@
 		"@changesets/cli": "2.31.0",
 		"@types/bun": "latest",
 		"fetch-mock": "12.6.0",
-		"obuild": "0.4.35"
+		"obuild": "0.4.36"
 	},
 	"peerDependencies": {
 		"typescript": "5.9.2"
