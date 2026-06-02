@@ -24,8 +24,8 @@
 		"publish": "bun run build && changeset publish"
 	},
 	"devDependencies": {
-		"@arethetypeswrong/cli": "0.18.2",
-		"@biomejs/biome": "2.4.15",
+		"@arethetypeswrong/cli": "0.18.3",
+		"@biomejs/biome": "2.4.16",
 		"@changesets/cli": "2.31.0",
 		"@types/bun": "latest",
 		"fetch-mock": "12.6.0",
