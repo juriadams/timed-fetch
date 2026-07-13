@@ -24,12 +24,12 @@
 		"publish": "bun run build && changeset publish"
 	},
 	"devDependencies": {
-		"@arethetypeswrong/cli": "0.18.4",
-		"@biomejs/biome": "2.5.2",
+		"@arethetypeswrong/cli": "0.18.5",
+		"@biomejs/biome": "2.5.3",
 		"@changesets/cli": "2.31.0",
 		"@types/bun": "latest",
 		"fetch-mock": "12.6.0",
-		"obuild": "0.4.37"
+		"obuild": "0.4.38"
 	},
 	"peerDependencies": {
 		"typescript": "5.9.2"
