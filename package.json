@@ -25,11 +25,11 @@
 	},
 	"devDependencies": {
 		"@arethetypeswrong/cli": "0.18.5",
-		"@biomejs/biome": "2.5.13",
-		"@changesets/cli": "3.0.2",
+		"@biomejs/biome": "2.5.14",
+		"@changesets/cli": "3.0.3",
 		"@types/bun": "latest",
 		"fetch-mock": "12.6.0",
-		"obuild": "0.4.39"
+		"obuild": "0.4.40"
 	},
 	"peerDependencies": {
 		"typescript": "5.9.2"
